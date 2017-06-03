@@ -11,6 +11,6 @@ class HomeView(TemplateView):
     def get_context_data(self, **kwargs):
         ctx = super(HomeView, self).get_context_data(**kwargs)
 
-        ctx['product'] = random.sample(list(Product.objects.all()), 50)
+        ctx['products'] = random.sample(list(Product.objects.all()), 50)
 
         return ctx
