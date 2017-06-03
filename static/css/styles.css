@@ -1,0 +1,65 @@
+.col-md-2.padding-none {
+ padding: 0;
+}
+
+.big-banner-left, .big-banner-right {
+    height: 100vh;
+    background-size: cover;
+    background-position: 0 0;
+}
+
+.header-bar {
+    position: relative;
+    padding: 0;
+    margin: 0 -15px;
+    min-height: 50px;
+    display: block;
+    background-color: #3097D1;
+}
+
+.navigation-bar-brand {
+    display: inline-block;
+}
+
+.navigation-bar-brand img {
+    background-size: 100px auto;
+    z-index: 10;
+}
+
+.navigation-bar-items {
+    display: inline-block;
+}
+
+.navigation-bar-items ul {
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+}
+
+.navigation-bar-items li {
+    display: inline-block;
+}
+
+li.active {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.navigation-bar-items li a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #C5E8FA;
+}
+
+.navigation-bar-items li a:hover {
+    color: #fff;
+    transition: color .25s ease;
+}
+
+.content {
+    margin: 1em;
+    line-height: 1.6;
+    font-size: 1.5rem;
+}

@@ -1,31 +1,78 @@
 <!DOCTYPE html>
-{% load staticfiles %}
 <html lang="en">
+{% load staticfiles %}
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Kalnynsh">
+    <meta charset="UTF-8">
     <title>Daintree :: Where search comes first</title>
-    <!-- CSS to Django -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta property="og:image" content="path/to/image.jpg">
+    <link rel="shortcut icon" href="{% static 'images/favicon/favicon.ico' %}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{% static 'images/favicon/apple-touch-icon.png' %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'images/favicon/apple-touch-icon-72x72.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'images/favicon/apple-touch-icon-114x114.png' %}">
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#e6e6e6">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#e6e6e6">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#e6e6e6">
+    <!--<style>-->
+        <!--body {-->
+            <!--opacity: 0;-->
+            <!--overflow-x: hidden;-->
+        <!--}-->
+        <!--html {-->
+            <!--background-color: #e6e6e6;-->
+        <!--}-->
+    <!--</style>-->
+     <!--CSS to Django-->
+    <link rel="stylesheet" href="{% static 'css/bootstrap-grid.css' %}">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <link rel="icon" href="{% static 'images/favicon.ico' %}">
 </head>
 <body>
 <div class="container">
-<nav class="top_nav">
-    <ul>
-        <li><a href="#">About us</a></li>
-        <li><a href="#">Privacy</a></li>
-        <li><a href="#">Terms</a></li>
-        <li><a href="#">Contact</a></li>
-    </ul>
-</nav>
-    <h1>Daintree</h1>
+    <div class="row">
 
+        <div class="col-md-2 padding-none">
+            <div class="big-banner-left" style="background-image: url({% static 'images/big-banner-left.jpg' %});">
+            </div>
+        </div>
 
-{% block content %}
-{% endblock %}
+        <div class="col-md-8">
+            <div class="header-bar">
+                <nav class="navigation-bar">
+
+                            <div class="navigation-bar-brand">
+                                <a href="#">
+                                    <img src="{% static 'images/header-logo.jpg' %}" alt="Logo">
+                                </a>
+                            </div>
+                            <div class="navigation-bar-items">
+                                <ul>
+                                    <li class="active"><a href="#">
+                                        Home <span class="sr-only">(current)</span>
+                                    </a></li>
+                                    <li><a href="#">About us</a></li>
+                                    <li><a href="#">Privacy</a></li>
+                                    <li><a href="#">Terms</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                </ul>
+                            </div>
+
+                </nav>
+            </div>
+                <div class="content">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+        </div>
+        <div class="col-md-2 padding-none">
+            <div class="big-banner-right" style="background-image: url({% static 'images/big-banner-right.jpg' %});">
+            </div>
+        </div>
+
+    </div>
 
 </div>
     <script src="{% static 'js/jquery.min.js' %}"></script>
