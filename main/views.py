@@ -3,7 +3,6 @@ from django.shortcuts import render
 from django.views.generic import View
 
 from elasticsearch_dsl import Search
-from elasticsearch_dsl.connections import connections
 
 from main.forms import SearchForm
 
@@ -18,9 +17,7 @@ class HomeView(View):
             "form": form
         }
     
-        if form.is_valid():
-            connections.create_connection()
-            
+        if form.is_valid():           
             name_query = form.cleaned_data["name"]
             
             if name_query:
