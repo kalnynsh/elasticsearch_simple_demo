@@ -22,7 +22,11 @@ class HomeView(View):
             connections.create_connection()
             
             name_query = form.cleaned_data["name"]
-            s = Search(index="daintree").query("match", name=name_query)
+            
+            if name_query:
+                s = Search(index="daintree").query("match", name=name_query)
+            else:
+                s = Search(index="daintree")
             
             result = s.execute()
             
