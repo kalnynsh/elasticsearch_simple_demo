@@ -9,6 +9,14 @@
         <input type="submit" value="Search" class="submit">
     </form>
 </div>
+{% if aggregations.categories.buckets %}
+<h2>Categories</h2>
+<ul>
+    {% for bucket in aggregations.categories.buckets %}
+        <li>{{ bucket.key }} ({{ bucket.doc_count }})</li>
+    {% endfor %}
+</ul>
+{% endif %}
 <ul>
     {% if products %}
         {% for product in products %}
