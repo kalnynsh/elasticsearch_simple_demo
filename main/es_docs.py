@@ -8,7 +8,7 @@ class ESProduct(DocType):
     description = String()
     price = Long(required=True)
 
-    category = String(required=True, fielddata=True, index="not_analyzed")
+    category = String(required=True, index="not_analyzed")
     tags = String(multi=True)
 
     class Meta:
