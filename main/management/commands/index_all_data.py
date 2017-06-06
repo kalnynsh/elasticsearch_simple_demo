@@ -12,6 +12,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         elasticsearch_dsl.connections.connections.create_connection()
+        ESProduct.init(index='daintree')
 
         for product in Product.objects.all():
             esp = ESProduct(meta={'id': product.pk}, name=product.name, description=product.description,
