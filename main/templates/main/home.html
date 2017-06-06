@@ -15,6 +15,7 @@
         <li>
             Name: <b>{{ product.name }}</b><br>
             <i>Category: {{ product.category }}</i><br>
+            <i>Price: {{ product.price }}</i><br>
             {% if product.tag.all %}
                 Tags: (
                 {% for tag in product.tags.all %}
