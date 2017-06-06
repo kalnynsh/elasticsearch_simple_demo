@@ -37,9 +37,13 @@ class HomeView(View):
                     price_query["lte"] = max_price
                 
                 s = s.query("range", price=price_query)
+
+            ## Add aggregations
+            s.aggs.bucket("categories", "terms", field="category")
             
             result = s.execute()
             
             ctx["products"] = result.hits
+            ctx["aggregations"] = result.aggregations
             
         return render(request, "main/home.html", ctx)
