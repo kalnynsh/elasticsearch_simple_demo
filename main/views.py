@@ -1,3 +1,4 @@
+from django.core.urlresolvers import reverse
 from django.shortcuts import render
 from django.views.generic import View
 
@@ -40,10 +41,29 @@ class HomeView(View):
 
             ## Add aggregations
             s.aggs.bucket("categories", "terms", field="category")
+
+            if request.GET.get("category"):
+                s = s.query("match", category=request.GET["category"])
             
             result = s.execute()
             
             ctx["products"] = result.hits
-            ctx["aggregations"] = result.aggregations
+
+            category_aggregations = list()
+            for bucket in result.aggregations.categories.buckets:
+                category_name = bucket.key
+                doc_count = bucket.doc_count
+
+                category_url_params = request.GET.copy()
+                category_url_params["category"] = category_name
+                category_url = "{}?{}".format(reverse("home"),
+                                              category_url_params.urlencode())
+                category_aggregations.append({
+                    "name": category_name,
+                    "doc_count": doc_count,
+                    "url": category_url
+                })
+
+            ctx["category_aggs"] = category_aggregations
             
         return render(request, "main/home.html", ctx)

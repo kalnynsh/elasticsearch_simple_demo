@@ -20,4 +20,4 @@ class Command(BaseCommand):
             for tag in product.tags.all():
                 esp.tags.append(tag.name)
 
-                esp.save(index='daintree')
+            esp.save(index='daintree')
