@@ -3,14 +3,15 @@
 
 {% block content %}
 <h2>Search</h2>
-<div class="form">
-    <form action="" method="get" class="form-search">
+<div class="form__search">
+    <form action="" method="get" >
         {{ form.as_p }}
-        <input type="submit" value="Search" class="button">
+        <input type="submit" value="Search" class="form__button_submit">
     </form>
 </div>
 {% if category_aggs %}
     <h2>Categories</h2>
+<div class="category-list">
     <ul>
         {% for agg in category_aggs %}
             <li>
@@ -19,12 +20,17 @@
             </li>
         {% endfor %}
     </ul>
+</div>
     {% if remove_category_url %}
-    <a href="{{ remove_category_url }}">Remove Category Filter</a>
+    <a href="{{ remove_category_url }}" class="search__button_remove_url">
+        Remove Category Filter
+    </a>
     {% endif %}
+
 {% endif %}
 
 <h2>Results</h2>
+<div class="product-list">
 <ul>
     {% if products %}
         {% for product in products %}
@@ -48,4 +54,5 @@
        <p>No result found. Please try another search term.</p>
     {% endif %}
 </ul>
+</div>
 {% endblock %}

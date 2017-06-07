@@ -58,15 +58,109 @@ li.active {
     color: #fff;
     transition: color .25s ease;
 }
-.form  {
-    background-color: rgba(#3097D1, 0.3);
-}
 
-.form-search {
+.form__search {
+    background-color: rgba(48, 151, 209, 0.3);
+    display: inline-block;
     padding: 10px 15px;
     margin-top: 8px;
-    border: solid 1px rgba(#3097D1, 0.5);
+    border: solid 1px rgba(48, 151, 209, 0.5);
+    border-radius: 8px;
+}
+
+.form__button_submit {
+    background-color: #3097D1;
+    border-color: rgba(48, 151, 209, 0.5);
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    touch-action: manipulation;
+    cursor: pointer;
+    border: 1px solid transparent;
     border-radius: 4px;
+    color: rgba(255, 255, 255, 0.7)
+}
+
+.search__button_remove_url {
+    background-color: #ffffb3;
+    border-color: #cccc00;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    touch-action: manipulation;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #999900;
+}
+
+.category-list {
+    display: block;
+    max-width: 500px;
+    color: #6db5df;
+    position: relative;
+    display: block;
+    background-color: #fff;
+}
+
+.category-list ul {
+    list-style-type: none;
+    margin: 0;
+    -webkit-padding-start: 0;
+}
+
+.category-list li {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+}
+
+.category-list li a {
+    text-decoration: none;
+}
+
+.category-list li a:hover {
+    cursor: pointer;
+    color: #96cae8;
+    transition: color .25s ease;
+}
+
+.product-list {
+    display: block;
+    max-width: 500px;
+    color: #174b69;
+    position: relative;
+    display: block;
+    background-color: #fff;
+}
+
+.product-list ul {
+    list-style-type: none;
+    margin: 0;
+    -webkit-padding-start: 0;
+}
+
+.product-list li {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    margin-bottom: -1px;
+}
+
+.product-list li a {
+    text-decoration: none;
+}
+
+.product-list li a:hover {
+    cursor: pointer;
+    color: #96cae8;
+    transition: color .25s ease;
 }
 
 .content {
