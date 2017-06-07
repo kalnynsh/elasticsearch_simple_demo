@@ -65,5 +65,12 @@ class HomeView(View):
                 })
 
             ctx["category_aggs"] = category_aggregations
-            
+
+        if "category" in request.GET:
+            remove_category_search_params = request.GET.copy()
+            del remove_category_search_params["category"]
+            remove_category_url = "{}?{}".format(reverse("home"),
+                                                 remove_category_search_params.urlencode())
+            ctx["remove_category_url"] = remove_category_url
+
         return render(request, "main/home.html", ctx)
