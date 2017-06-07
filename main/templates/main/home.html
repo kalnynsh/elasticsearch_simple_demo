@@ -6,17 +6,22 @@
 <div class="form">
     <form action="" method="get" class="form-search">
         {{ form.as_p }}
-        <input type="submit" value="Search" class="submit">
+        <input type="submit" value="Search" class="button">
     </form>
 </div>
-{% if aggregations.categories.buckets %}
-<h2>Categories</h2>
-<ul>
-    {% for bucket in aggregations.categories.buckets %}
-        <li>{{ bucket.key }} ({{ bucket.doc_count }})</li>
-    {% endfor %}
-</ul>
+{% if category_aggs %}
+    <h2>Categories</h2>
+    <ul>
+        {% for agg in category_aggs %}
+            <li>
+                <a href="{{ agg.url }}">{{ agg.name }}</a>
+                ({{ agg.doc_count }})
+            </li>
+        {% endfor %}
+    </ul>
 {% endif %}
+
+<h2>Results</h2>
 <ul>
     {% if products %}
         {% for product in products %}
