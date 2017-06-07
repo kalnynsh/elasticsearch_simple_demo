@@ -19,6 +19,9 @@
             </li>
         {% endfor %}
     </ul>
+    {% if remove_category_url %}
+    <a href="{{ remove_category_url }}">Remove Category Filter</a>
+    {% endif %}
 {% endif %}
 
 <h2>Results</h2>
