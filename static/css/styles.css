@@ -90,6 +90,7 @@ li.active {
     border-color: #cccc00;
     display: inline-block;
     padding: 6px 12px;
+    margin-top: 15px;
     margin-bottom: 0;
     font-size: 14px;
     line-height: 1.42857143;
@@ -97,7 +98,7 @@ li.active {
     white-space: nowrap;
     touch-action: manipulation;
     cursor: pointer;
-    border: 1px solid transparent;
+    border: 1px solid #ddd;
     border-radius: 4px;
     color: #999900;
 }
@@ -120,6 +121,7 @@ li.active {
 .category-list li {
     padding: 10px 15px;
     border: 1px solid #ddd;
+    margin-bottom: -1px;
 }
 
 .category-list li a {
